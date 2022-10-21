@@ -12,3 +12,10 @@ The framework API consists of:
 •A set of permissions that applications can request, as well as permission enforcements included in the system
 
 
+The API Level identifier serves a key role in ensuring the best possible experience for users and application developers:
+
+•It lets the Android platform describe the maximum framework API revision that it supports
+•It lets applications describe the framework API revision that they require
+•It lets the system negotiate the installation of applications on the user's device, such that version-incompatible •applications are not installed.
+
+
