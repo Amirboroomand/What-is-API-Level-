@@ -19,3 +19,12 @@ The API Level identifier serves a key role in ensuring the best possible experie
 •It lets the system negotiate the installation of applications on the user's device, such that version-incompatible •applications are not installed.
 
 
+Each Android platform version stores its API Level identifier internally, in the Android system itself.
+
+Applications can use a manifest element provided by the framework API — <uses-sdk> — to describe the minimum and maximum API Levels under which they are able to run, as well as the preferred API Level that they are designed to support. The element offers three key attributes:
+
+android:minSdkVersion — Specifies the minimum API Level on which the application is able to run. The default value is "1".
+android:targetSdkVersion — Specifies the API Level on which the application is designed to run. In some cases, this allows the application to use manifest elements or behaviors defined in the target API Level, rather than being restricted to using only those defined for the minimum API Level.
+android:maxSdkVersion — Specifies the maximum API Level on which the application is able to run. Important: Please read the <uses-sdk> documentation before using this attribute.
+
+
