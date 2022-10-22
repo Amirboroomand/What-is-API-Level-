@@ -28,3 +28,11 @@ android:targetSdkVersion — Specifies the API Level on which the application is
 android:maxSdkVersion — Specifies the maximum API Level on which the application is able to run. Important: Please read the <uses-sdk> documentation before using this attribute.
 
 
+For example, to specify the minimum system API Level that an application requires in order to run, the application would include in its manifest a <uses-sdk> element with a android:minSdkVersion attribute. The value of android:minSdkVersion would be the integer corresponding to the API Level of the earliest version of the Android platform under which the application can run.
+
+When the user attempts to install an application, or when revalidating an appplication after a system update, the Android system first checks the <uses-sdk> attributes in the application's manifest and compares the values against its own internal API Level. The system allows the installation to begin only if these conditions are met:
+
+If a android:minSdkVersion attribute is declared, its value must be less than or equal to the system's API Level integer. If not declared, the system assumes that the application requires API Level 1.
+If a android:maxSdkVersion attribute is declared, its value must be equal to or greater than the system's API Level integer. If not declared, the system assumes that the application has no maximum API Level. Please read the <uses-sdk> documentation for more information about how the system handles this attribute.
+
+
