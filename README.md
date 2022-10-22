@@ -36,3 +36,11 @@ If a android:minSdkVersion attribute is declared, its value must be less than or
 If a android:maxSdkVersion attribute is declared, its value must be equal to or greater than the system's API Level integer. If not declared, the system assumes that the application has no maximum API Level. Please read the <uses-sdk> documentation for more information about how the system handles this attribute.
 
 
+When declared in an application's manifest, a <uses-sdk> element might look like this:
+
+<manifest>
+  <uses-sdk android:minSdkVersion="5" />
+  ...
+</manifest>
+
+
