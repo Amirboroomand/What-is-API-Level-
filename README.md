@@ -44,3 +44,26 @@ When declared in an application's manifest, a <uses-sdk> element might look like
 </manifest>
 
 
+#Development Considerations
+
+The sections below provide information related to API level that you should consider when developing your application.
+
+#Application forward compatibility
+
+Android applications are generally forward-compatible with new versions of the Android platform.
+
+Because almost all changes to the framework API are additive, an Android application developed using any given version of the API (as specified by its API Level) is forward-compatible with later versions of the Android platform and higher API levels. The application should be able to run on all later versions of the Android platform, except in isolated cases where the application uses a part of the API that is later removed for some reason.
+
+Forward compatibility is important because many Android-powered devices receive over-the-air (OTA) system updates. The user may install your application and use it successfully, then later receive an OTA update to a new version of the Android platform. Once the update is installed, your application will run in a new run-time version of the environment, but one that has the API and system capabilities that your application depends on.
+
+In some cases, changes below the API, such those in the underlying system itself, may affect your application when it is run in the new environment. For that reason it's important for you, as the application developer, to understand how the application will look and behave in each system environment. To help you test your application on various versions of the Android platform, the Android SDK includes multiple platforms that you can download. Each platform includes a compatible system image that you can run in an AVD, to test your application.
+
+#Application backward compatibility
+
+Android applications are not necessarily backward compatible with versions of the Android platform older than the version against which they were compiled.
+
+Each new version of the Android platform can include new framework APIs, such as those that give applications access to new platform capabilities or replace existing API parts. The new APIs are accessible to applications when running on the new platform and, as mentioned above, also when running on later versions of the platform, as specified by API Level. Conversely, because earlier versions of the platform do not include the new APIs, applications that use the new APIs are unable to run on those platforms.
+
+Although it's unlikely that an Android-powered device would be downgraded to a previous version of the platform, it's important to realize that there are likely to be many devices in the field that run earlier versions of the platform. Even among devices that receive OTA updates, some might lag and might not receive an update for a significant amount of time.
+
+
