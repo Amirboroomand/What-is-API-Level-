@@ -66,4 +66,16 @@ Each new version of the Android platform can include new framework APIs, such as
 
 Although it's unlikely that an Android-powered device would be downgraded to a previous version of the platform, it's important to realize that there are likely to be many devices in the field that run earlier versions of the platform. Even among devices that receive OTA updates, some might lag and might not receive an update for a significant amount of time.
 
+#Selecting a platform version and API Level
+
+When you are developing your application, you will need to choose the platform version against which you will compile the application. In general, you should compile your application against the lowest possible version of the platform that your application can support.
+
+You can determine the lowest possible platform version by compiling the application against successively lower build targets. After you determine the lowest version, you should create an AVD using the corresponding platform version (and API Level) and fully test your application. Make sure to declare a android:minSdkVersion attribute in the application's manifest and set its value to the API Level of the platform version.
+
+#Declaring a minimum API Level
+
+If you build an application that uses APIs or system features introduced in the latest platform version, you should set the android:minSdkVersion attribute to the API Level of the latest platform version. This ensures that users will only be able to install your application if their devices are running a compatible version of the Android platform. In turn, this ensures that your application can function properly on their devices.
+
+If your application uses APIs introduced in the latest platform version but does not declare a android:minSdkVersion attribute, then it will run properly on devices running the latest version of the platform, but not on devices running earlier versions of the platform. In the latter case, the application will crash at runtime when it tries to use APIs that don't exist on the earlier versions.
+
 
