@@ -77,5 +77,15 @@ You can determine the lowest possible platform version by compiling the applicat
 If you build an application that uses APIs or system features introduced in the latest platform version, you should set the android:minSdkVersion attribute to the API Level of the latest platform version. This ensures that users will only be able to install your application if their devices are running a compatible version of the Android platform. In turn, this ensures that your application can function properly on their devices.
 
 If your application uses APIs introduced in the latest platform version but does not declare a android:minSdkVersion attribute, then it will run properly on devices running the latest version of the platform, but not on devices running earlier versions of the platform. In the latter case, the application will crash at runtime when it tries to use APIs that don't exist on the earlier versions.
+  
+#Testing against higher API Levels
+  
+After compiling your application, you should make sure to test it on the platform specified in the application's android:minSdkVersion attribute. To do so, create an AVD that uses the platform version required by your application. Additionally, to ensure forward-compatibility, you should run and test the application on all platforms that use a higher API Level than that used by your application.
+
+The Android SDK includes multiple platform versions that you can use, including the latest version, and provides an updater tool that you can use to download other platform versions as necessary.
+
+To access the updater, use the android command-line tool, located in the <sdk>/tools directory. You can launch the Updater by using the android command without specifying any options. You can also simply double-click the android.bat (Windows) or android (OS X/Linux) file. In ADT, you can also access the updater by selecting Window > Android SDK and AVD Manager.
+
+To run your application against different platform versions in the emulator, create an AVD for each platform version that you want to test. For more information about AVDs, see Android Virtual Devices. If you are using a physical device for testing, ensure that you know the API Level of the Android platform it runs. See the table at the top of this document for a list of platform versions and their API Levels.
 
 
