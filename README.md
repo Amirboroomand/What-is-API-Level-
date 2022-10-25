@@ -95,5 +95,18 @@ In some cases, an "Early Look" Android SDK platform may be available. To let you
 The use of a provisional API Level is designed to protect developers and device users from inadvertently publishing or installing applications based on the Early Look framework API, which may not run properly on actual devices running the final system image.
 
 The provisional API Level will only be valid while using the Early Look SDK and can only be used to run applications in the emulator. An application using the provisional API Level can never be installed on an Android device. At the final release of the platform, you must replace any instances of the provisional API Level in your application manifest with the final platform's actual API Level integer.
+  
+  
+#Filtering the Reference Documentation by API Level
+  
+Reference documentation pages on the Android Developers site offer a "Filter by API Level" control in the top-right area of each page. You can use the control to show documentation only for parts of the API that are actually accessible to your application, based on the API Level that it specifies in the android:minSdkVersion attribute of its manifest file.
+
+To use filtering, select the checkbox to enable filtering, just below the page search box. Then set the "Filter by API Level" control to the same API Level as specified by your application. Notice that APIs introduced in a later API Level are then grayed out and their content is masked, since they would not be accessible to your application.
+
+Filtering by API Level in the documentation does not provide a view of what is new or introduced in each API Level — it simply provides a way to view the entire API associated with a given API Level, while excluding API elements introduced in later API Levels.
+
+If you decide that you don't want to filter the API documentation, just disable the feature using the checkbox. By default, API Level filtering is disabled, so that you can view the full framework API, regardless of API Level.
+
+Also note that the reference documentation for individual API elements specifies the API Level at which each element was introduced. The API Level for packages and classes is specified as "Since <api level>" at the top-right corner of the content area on each documentation page. The API Level for class members is specified in their detailed description headers, at the right margin.
 
 
