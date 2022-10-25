@@ -88,4 +88,12 @@ To access the updater, use the android command-line tool, located in the <sdk>/t
 
 To run your application against different platform versions in the emulator, create an AVD for each platform version that you want to test. For more information about AVDs, see Android Virtual Devices. If you are using a physical device for testing, ensure that you know the API Level of the Android platform it runs. See the table at the top of this document for a list of platform versions and their API Levels.
 
+#Using a Provisional API Level
+
+In some cases, an "Early Look" Android SDK platform may be available. To let you begin developing on the platform although the APIs may not be final, the platform's API Level integer will not be specified. You must instead use the platform's provisional API Level in your application manifest, in order to build applications against the platform. A provisional API Level is not an integer, but a string matching the codename of the unreleased platform version. The provisional API Level will be specified in the release notes for the Early Look SDK release notes and is case-sensitive.
+
+The use of a provisional API Level is designed to protect developers and device users from inadvertently publishing or installing applications based on the Early Look framework API, which may not run properly on actual devices running the final system image.
+
+The provisional API Level will only be valid while using the Early Look SDK and can only be used to run applications in the emulator. An application using the provisional API Level can never be installed on an Android device. At the final release of the platform, you must replace any instances of the provisional API Level in your application manifest with the final platform's actual API Level integer.
+
 
